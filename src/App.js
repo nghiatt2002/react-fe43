@@ -8,17 +8,21 @@ import EventBinding from './EventBinding/EventBinding';
 import RenderWithState from './RenderWithState/RenderWithState';
 import BTChonXe from './RenderWithState/BTChonXe';
 import RenderWithMap from './RenderWithMap/RenderWithMap';
+import BaiTapBanKinh from './RenderWithState/BaiTapBanKinh';
+import DemoProps from './Props/DemoProps';
 
 function App() {
   return (
     <div className="App">
-      {/* <BaiTapLayout /> */}
+      <BaiTapLayout />
       {/* <BaiTapLayout2 /> */}
       {/* <DataBiding /> */}
       {/* <EventBinding /> */}
       {/* <RenderWithState /> */}
       {/* <BTChonXe /> */}
-      <RenderWithMap />
+      {/* <RenderWithMap /> */}
+      {/* <BaiTapBanKinh /> */}
+      {/* <DemoProps /> */}
     </div>
   );
 }
