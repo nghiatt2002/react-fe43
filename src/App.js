@@ -10,11 +10,12 @@ import BTChonXe from './RenderWithState/BTChonXe';
 import RenderWithMap from './RenderWithMap/RenderWithMap';
 import BaiTapBanKinh from './RenderWithState/BaiTapBanKinh';
 import DemoProps from './Props/DemoProps';
+import ExampleCard from './LiftingUpState/ExampleCard';
 
 function App() {
   return (
     <div className="App">
-      <BaiTapLayout />
+      {/* <BaiTapLayout /> */}
       {/* <BaiTapLayout2 /> */}
       {/* <DataBiding /> */}
       {/* <EventBinding /> */}
@@ -23,6 +24,7 @@ function App() {
       {/* <RenderWithMap /> */}
       {/* <BaiTapBanKinh /> */}
       {/* <DemoProps /> */}
+      <ExampleCard />
     </div>
   );
 }
