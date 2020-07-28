@@ -12,6 +12,7 @@ import DemoProps from './Props/DemoProps';
 import ExampleCard from './LiftingUpState/ExampleCard';
 import BTGioHangRedux from './BaiTapRedux/BaiTapGioHang/BTGioHangRedux';
 import BTBurger from './BaiTapRedux/BaiTapBurger/BTBurger';
+import GameBauCua from './BaiTapRedux/GameBauCua';
 
 function App() {
   return (
@@ -27,7 +28,8 @@ function App() {
       {/* <DemoProps /> */}
       {/* <ExampleCard /> */}
       {/* <BTGioHangRedux /> */}
-      <BTBurger />
+      {/* <BTBurger /> */}
+      <GameBauCua />
     </div>
   );
 }
