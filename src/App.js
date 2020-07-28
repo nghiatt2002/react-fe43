@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import BaiTapLayout from './Components/BaiTapLayout/BaiTapLayout';
 import BaiTapLayout2 from './Components/BaiTapLayout2/BaiTapLayout2';
@@ -11,6 +10,8 @@ import RenderWithMap from './RenderWithMap/RenderWithMap';
 import BaiTapBanKinh from './RenderWithState/BaiTapBanKinh';
 import DemoProps from './Props/DemoProps';
 import ExampleCard from './LiftingUpState/ExampleCard';
+import BTGioHangRedux from './BaiTapRedux/BaiTapGioHang/BTGioHangRedux';
+import BTBurger from './BaiTapRedux/BaiTapBurger/BTBurger';
 
 function App() {
   return (
@@ -24,7 +25,9 @@ function App() {
       {/* <RenderWithMap /> */}
       {/* <BaiTapBanKinh /> */}
       {/* <DemoProps /> */}
-      <ExampleCard />
+      {/* <ExampleCard /> */}
+      {/* <BTGioHangRedux /> */}
+      <BTBurger />
     </div>
   );
 }
