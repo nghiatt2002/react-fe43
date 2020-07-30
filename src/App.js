@@ -13,6 +13,7 @@ import ExampleCard from './LiftingUpState/ExampleCard';
 import BTGioHangRedux from './BaiTapRedux/BaiTapGioHang/BTGioHangRedux';
 import BTBurger from './BaiTapRedux/BaiTapBurger/BTBurger';
 import GameBauCua from './BaiTapRedux/GameBauCua';
+import BaiTapQLSV from './BaiTapRedux/BaiTapQLSV';
 
 function App() {
   return (
@@ -29,7 +30,8 @@ function App() {
       {/* <ExampleCard /> */}
       {/* <BTGioHangRedux /> */}
       {/* <BTBurger /> */}
-      <GameBauCua />
+      {/* <GameBauCua /> */}
+      <BaiTapQLSV />
     </div>
   );
 }

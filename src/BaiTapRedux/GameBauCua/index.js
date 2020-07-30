@@ -35,14 +35,6 @@ const mapStateToProps = (state) => {
         // key: là props của component
         // value: là state được lưu trên reducer
         tongTien: state.GameBauCuaReducer.tongTien,
-
-    }
-}
-
-// 
-const mapDispatchToProps = (dispatch) => {
-    return {
-
     }
 }
 

@@ -9,9 +9,9 @@ const initialState = {
         {ma: "ga", hinhAnh: "./img/ga.png", giaCuoc: 0}
     ],
     xucxac: [
-        {ma: "bau", hinhAnh: "./img/bau.png", giaCuoc: 0},
-        {ma: "cua", hinhAnh: "./img/cua.png", giaCuoc: 0},
-        {ma: "tom", hinhAnh: "./img/tom.png", giaCuoc: 0}
+        {ma: "bau", hinhAnh: "./img/bau.png"},
+        {ma: "cua", hinhAnh: "./img/cua.png"},
+        {ma: "tom", hinhAnh: "./img/tom.png"}
     ]
 }
 

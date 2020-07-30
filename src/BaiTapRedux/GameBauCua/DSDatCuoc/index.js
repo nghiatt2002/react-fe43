@@ -9,7 +9,6 @@ class DSDatCuoc extends Component {
                 <div className="card col-4" key={index}>
                     <img className="card-img-top" src={item.hinhAnh} alt="Card cap" style={{ height: 200 }} />
                     <div className="card-body">
-                        <h5 className="card-title" />
                         <div className="d-flex justify-content-around align-items-center">
                             <button className="btn btn-info" onClick={() => {this.props.tangGiamMucCuoc(item.ma, false)}}>-</button>
                             <span>{item.giaCuoc}$</span>
