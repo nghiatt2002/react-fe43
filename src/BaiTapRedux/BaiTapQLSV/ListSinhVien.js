@@ -7,12 +7,14 @@ class ListSinhVien extends Component {
         return mangSV.map((sinhvien, index) => {
             return (
                 <tr key={index}>
-                    <td>{sinhvien.masv}</td>
+                    <td>{sinhvien.tkhoan}</td>
+                    <td>{sinhvien.matkhau}</td>
                     <td>{sinhvien.hoten}</td>
                     <td>{sinhvien.sdt}</td>
                     <td>{sinhvien.email}</td>
+                    <td>{sinhvien.manhom}</td>
                     <td>
-                        <button type="button" className="btn btn-info mr-2">Chỉnh sửa</button>
+                        <button type="button" className="btn btn-info mr-2" onClick={()=>{this.props.chinhSua(sinhvien)}}>Chỉnh sửa</button>
                         <button type="button" className="btn btn-danger" onClick={() => {this.props.xoaSinhVien(sinhvien.masv)}}>Xóa</button>
                     </td>
                 </tr>
@@ -26,10 +28,12 @@ class ListSinhVien extends Component {
             <table className="table">
                 <thead className="thead-dark">
                     <tr>
-                        <th>Mã SV</th>
+                        <th>Tài khoản</th>
+                        <th>Mật khẩu</th>
                         <th>Họ tên</th>
                         <th>Số điện thoại</th>
                         <th>Email</th>
+                        <th>Mã nhóm</th>
                         <th>Chức năng</th>
                     </tr>
                 </thead>
@@ -42,7 +46,13 @@ class ListSinhVien extends Component {
     }
 }
 
-const mapStetToProps = (state) => {
+// const mapStetToProps = (state) => {
+//     return {
+//         mangSV: state.QLSVReducer.mangSV
+//     }
+// }
+
+function mapStetToProps (state) {
     return {
         mangSV: state.QLSVReducer.mangSV
     }
@@ -50,13 +60,27 @@ const mapStetToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return  {
-        xoaSinhVien: (masv) => {
-            const action = {
-                type: 'XOA_SV',
-                masv
-            }
+        xoaSinhVien: (taikhoan) => {
+            // const action = {
+            //     type: 'XOA_SV',
+            //     taikhoan
+            // }
 
-            dispatch(action)
+            dispatch(
+                {
+                    type: 'XOA_SV',
+                    taikhoan
+                }
+                // action
+            )
+        },
+        chinhSua: (sinhvien) => {
+            dispatch(
+                {
+                    type: 'CHI_TIET',
+                    sinhvien
+                }
+            )
         }
     }
 }

@@ -1,3 +1,7 @@
+import {getRandomInt} from '../../util/randomInt';
+import {TANG_GIAM_MUC_CUOC, CHOI_GAME} from '../constants/GameBauCuaConst';
+
+
 const initialState = {
     tongTien: 100,
     DSDatCuoc: [
@@ -20,7 +24,7 @@ export const GameBauCuaReducer = (state = initialState, action) => {
     let {tongTien} = state;
     let DSDatCuoc = [...state.DSDatCuoc];
     switch (action.type) {
-        case 'TANG_GIAM_MUC_CUOC':
+        case TANG_GIAM_MUC_CUOC:
             index = DSDatCuoc.findIndex((item) => item.ma === action.ma);
 
             if (index !== -1) {
@@ -33,7 +37,6 @@ export const GameBauCuaReducer = (state = initialState, action) => {
                         // giảm tiền tổng
                         tongTien -= 10;
                     }
-
                 } else {
                     if (DSDatCuoc[index].giaCuoc > 0 ) {
                         // giảm tiền cược
@@ -45,13 +48,48 @@ export const GameBauCuaReducer = (state = initialState, action) => {
                 }
             }
 
-            // state.DSDatCuoc = DSDatCuoc;
             return {...state, DSDatCuoc, tongTien}
-            break;
+
+        case CHOI_GAME:
+            let DSCuoc = [...state.DSDatCuoc];
+
+            // tạo xúc xắc ngẫu nhiên
+            let arrXucXac = [
+                DSCuoc[getRandomInt(6)],
+                DSCuoc[getRandomInt(6)],
+                DSCuoc[getRandomInt(6)]
+            ];
+
+            // lấy ra những con đã cược
+            DSCuoc = DSCuoc.filter((item) => item.giaCuoc > 0);
+
+            // xử lý trả lại tiền
+            for (let conCuoc of DSCuoc) {
+                let traLaiTien = arrXucXac.find((item) => item.ma === conCuoc.ma);
+                if (traLaiTien) {
+                    tongTien += conCuoc.giaCuoc;
+                }
+            }
+
+            // xử lý trả thưởng
+            for (let xx of arrXucXac) {
+                let trungThuong = DSCuoc.find((conCuoc) => conCuoc.ma === xx.ma);
+                if (trungThuong) {
+                    tongTien += trungThuong.giaCuoc;
+                }
+            }
+
+            // reset giá trị đã cược về 0
+            DSCuoc.map((x) => { 
+                x.giaCuoc = 0; 
+                return x
+            });
+
+            state.xucxac = arrXucXac;
+            return {...state, DSDatCuoc, tongTien};
+
     
         default:
-            break;
+            return {...state};
     }
-    
-    return {...state};
 }

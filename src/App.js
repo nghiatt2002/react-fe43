@@ -13,7 +13,9 @@ import ExampleCard from './LiftingUpState/ExampleCard';
 import BTGioHangRedux from './BaiTapRedux/BaiTapGioHang/BTGioHangRedux';
 import BTBurger from './BaiTapRedux/BaiTapBurger/BTBurger';
 import GameBauCua from './BaiTapRedux/GameBauCua';
+import GameTaiXiu from './BaiTapRedux/GameTaiXiu';
 import BaiTapQLSV from './BaiTapRedux/BaiTapQLSV';
+import ReactLifeCircle from './ReactLifeCircle/ReactLifeCircle';
 
 function App() {
   return (
@@ -31,7 +33,9 @@ function App() {
       {/* <BTGioHangRedux /> */}
       {/* <BTBurger /> */}
       {/* <GameBauCua /> */}
+      {/* <GameTaiXiu /> */}
       <BaiTapQLSV />
+      {/* <ReactLifeCircle /> */}
     </div>
   );
 }
